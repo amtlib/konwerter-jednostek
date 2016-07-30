@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Konwerter jednostek</title>
+    <style>
+        body{
+            background-color: azure;
+            text-align: center;
+        }
+        #wrapper{
+            margin: 50px auto;
+            padding:50px;
+            width: 300px;
+            background-color: aquamarine;
+            text-align: center;
+            box-shadow: 0px 0px 20px black;
+        }
+        input{
+            margin: 5px 0;
+        }
+        .error{
+            border: 3px solid red;
+            background-color: #990000;
+        }
+
+    </style>
+</head>
+
+<body>
+   <h1>Konwerter jednostek</h1>
+    <div id="wrapper">
+
+        <input type="text" id="user_input" onkeyup="f()">
+        <select id="user_input_type" onchange="f()">
+            <option value="1">Metr</option>
+            <option value="1000">Kilometr</option>
+            <option value="0.01">Centymetr</option>
+            <option value="0.001">Milimetr</option>
+        </select>
+
+        <input type="text" id="output" disabled>
+        <select id="output_type" onchange="f()">
+            <option value="1">Metr</option>
+            <option value="1000">Kilometr</option>
+            <option value="0.01">Centymetr</option>
+            <option value="0.001">Milimetr</option>
+        </select>
+    </div>
+    <script>
+        function f() {
+            var user_input = document.getElementById("user_input");
+            var user_input_type = document.getElementById("user_input_type");
+            var output = document.getElementById("output");
+            var output_type = document.getElementById("output_type");
+            var output_value = parseFloat(user_input.value) * parseFloat(user_input_type.value) / parseFloat(output_type.value);
+            if(user_input.value === ''){
+                user_input.classList.remove("error");
+                output.value = '';
+            }
+            else if(isNaN(output_value)){
+                user_input.classList.add("error");
+                output.value = '';
+            }
+
+                else{
+                user_input.classList.remove("error");
+                output.value = output_value;
+            }
+        }
+    </script>
+</body>
+
+</html>
