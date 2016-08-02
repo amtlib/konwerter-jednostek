@@ -33,6 +33,6 @@ function convert_and_show() {
     }
 }
 
-document.getElementById("user_input").onkeyup = convert_and_show;
-document.getElementById("user_input_type").onchange = convert_and_show;
-document.getElementById("output_type").onchange = convert_and_show;
+document.getElementById("user_input").addEventListener('keyup', convert_and_show);
+document.getElementById("user_input_type").addEventListener('change', convert_and_show);
+document.getElementById("output_type").addEventListener('change', convert_and_show);
