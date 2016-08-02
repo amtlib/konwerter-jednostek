@@ -32,7 +32,8 @@ function convert_and_show() {
         update_output_value(converted_value);
     }
 }
-
-document.getElementById("user_input").addEventListener('keyup', convert_and_show);
-document.getElementById("user_input_type").addEventListener('change', convert_and_show);
-document.getElementById("output_type").addEventListener('change', convert_and_show);
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("user_input").addEventListener('keyup', convert_and_show);
+    document.getElementById("user_input_type").addEventListener('change', convert_and_show);
+    document.getElementById("output_type").addEventListener('change', convert_and_show);
+});
