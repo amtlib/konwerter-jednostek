@@ -32,3 +32,7 @@ function convert_and_show() {
         update_output_value(converted_value);
     }
 }
+
+document.getElementById("user_input").onkeyup = convert_and_show;
+document.getElementById("user_input_type").onchange = convert_and_show;
+document.getElementById("output_type").onchange = convert_and_show;
